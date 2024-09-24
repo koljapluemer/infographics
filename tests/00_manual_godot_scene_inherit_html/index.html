@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/arrow-line/dist/arrow-line.min.js"></script>
+</head>
+
+<body id="body">
+    <h1 class="text-3xl font-bold">
+        Godot Scene Inheritance & Co.
+    </h1>
+
+    <div id="main-grid" class="grid gap-24 p-2 grid-flow-col">
+
+        <div class="grid-item card bg-neutral col-start-2 row-start-2" id="car">
+            <div class="card-body">
+                <h2 class="card-title">Original Scene</h2>
+                <div class="grid-sub-part card shadow-lg bg-slate-800">
+                    <div class="card-body">
+                        <h3 class="font-bold text-xl"><code>car.tscn</code></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-item card bg-neutral col-start-1 row-start-1" id="inst1">
+            <div class="card-body">
+                <h2 class="card-title">Instantiate as Class</h2>
+                <div class="flex gap-2">
+                    <div class="grid-sub-part card shadow-lg bg-slate-800 flex-grow">
+                        <div class="card-body">
+                            <h3 class="font-bold text-xl"><code>.new()</code></h3>
+                        </div>
+                    </div>
+
+                    <div class="grid-sub-part card shadow-lg bg-slate-800">
+                        <div class="card-body">
+                            <h3 class="font-bold text-xl">Add to Scene Tree</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid-item card bg-neutral col-start-1 row-start-3 " id="inst2">
+            <div class="card-body">
+                <h2 class="card-title">Instantiate as Node</h2>
+                <div class="flex gap-2">
+                    <div class="grid-sub-part card shadow-lg bg-slate-800 flex-grow">
+                        <div class="card-body">
+                            <h3 class="font-bold text-xl"><code>.new()</code></h3>
+                        </div>
+                    </div>
+
+                    <div class="grid-sub-part card shadow-lg bg-slate-800">
+                        <div class="card-body">
+                            <h3 class="font-bold text-xl">Add to Scene Tree</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-item card bg-neutral row-start-1 col-start-3" id="inst3">
+            <div class="card-body">
+                <h2 class="card-title">Simply Copy Paste</h2>
+                <div class="flex gap-2">
+                    <div class="grid-sub-part card shadow-lg bg-slate-800">
+                        <div class="card-body">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid-item card bg-neutral  col-start-3 row-start-3 " id="inst4">
+            <div class="card-body">
+                <h2 class="card-title">Inherited Scene</h2>
+                <div class="flex gap-2 flex-col h-full">
+                    <div class="grid-sub-part card shadow-lg bg-slate-800 flex-grow">
+                        <div class="card-body">
+                            <h3 class="font-bold text-xl">Default</h3>
+                        </div>
+                    </div>
+
+                    <div class="grid-sub-part card shadow-lg bg-slate-800">
+                        <div class="card-body">
+                            <h3 class="font-bold text-xl">With <code>Editable Children</code></h3>
+                        </div>
+                    </div>
+
+                    <div class="grid-sub-part card shadow-lg bg-slate-800">
+                        <div class="card-body">
+                            <h3 class="font-bold text-xl">With <code>Make Local</code></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script>
+    const arrow2 = arrowLine({source: '#car', destination: '#inst1', thickness: 5, color: "rgba(256,256,256,.8)", sourcePosition: "middleLeft", destinationPosition: "middleRight", curvature: 1, endpoint: {type: "circles", position: "end"}});
+    const arrow3 = arrowLine({source: '#car', destination: '#inst2', thickness: 5, color: "rgba(256,256,256,.8)", sourcePosition: "middleLeft", destinationPosition: "middleRight", curvature: 1, endpoint: {type: "circles", position: "end"}});
+    const arrow4 = arrowLine({source: '#car', destination: '#inst3', thickness: 5, color: "rgba(256,256,256,.8)", sourcePosition: "middleRight", destinationPosition: "middleLeft", curvature: 1, endpoint: {type: "circles", position: "end"}});
+    const arrow5 = arrowLine({source: '#car', destination: '#inst4', thickness: 5, color: "rgba(256,256,256,.8)", sourcePosition: "middleRight", destinationPosition: "middleLeft", curvature: 1, endpoint: {type: "circles", position: "end"}});
+
+</script>
+
+</html>

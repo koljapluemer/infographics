@@ -1,0 +1,1 @@
+/home/b/MEGA/Obsidian/Zettelkasten/Thoughts/infographic﹕ godot scene instantiation.md
