@@ -6,7 +6,7 @@ with open('data/full/learning_data_after_cutoff.json', 'r') as f:
     data = json.load(f)
 
 # Load the geo.json file
-with open('data/full/worldmap.json', 'r') as f:
+with open('data/full/worldmap.geo.json', 'r') as f:
     geo_data = json.load(f)
 
 # Create a mapping of country names to their regions
