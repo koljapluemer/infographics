@@ -81,7 +81,7 @@ ax = fig.add_subplot(111, projection='3d')
 surf = ax.plot_surface(X, Y, Z, cmap='viridis_r', edgecolor='none', alpha=0.8)
 
 # Customize the plot
-ax.set_xlabel('Countries (sorted by first attempt performance)')
+ax.set_xlabel('')  # Remove x-axis label to prevent overlap
 ax.set_ylabel('Attempt Number')
 ax.set_zlabel('Percentage Incorrect (%)')
 ax.set_title('Learning Trajectories Across Countries')
@@ -89,12 +89,15 @@ ax.set_title('Learning Trajectories Across Countries')
 # Add colorbar
 fig.colorbar(surf, ax=ax, shrink=0.5, aspect=5, label='Percentage Incorrect (%)')
 
-# Set x-axis ticks to show country names
-ax.set_xticks(range(len(countries)))
-ax.set_xticklabels(countries, rotation=45, ha='right')
+# Set x-axis ticks to show every 10th country name
+ax.set_xticks(range(0, len(countries), 10))
+ax.set_xticklabels([countries[i] for i in range(0, len(countries), 10)], rotation=90, ha='center', va='top')
 
 # Adjust layout
 plt.tight_layout()
+
+# Rotate the view to show attempt 10 at the front and attempt 1 at the back
+ax.view_init(elev=20, azim=45)
 
 # Save plot
 os.makedirs('plots', exist_ok=True)
