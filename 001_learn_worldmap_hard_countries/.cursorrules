@@ -1,0 +1,4 @@
+- Use Python 3 Standards
+- Use Typing
+- Use Standalone Scripts that do not depend on each other
+- Do not tell me how to run scripts.

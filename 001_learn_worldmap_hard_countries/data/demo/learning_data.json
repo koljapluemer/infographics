@@ -1,0 +1,502 @@
+{
+    "001VbNvMlDUpb1XNk6wz": {
+      "timestamp": "2025-03-23T13:06:27.063Z",
+      "country": "Saudi Arabia",
+      "msFromExerciseToFirstClick": 1571,
+      "msFromExerciseToFinishClick": 1571,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 654.2112915765385,
+      "deviceId": "3e6664e8-c595-4b83-b739-91170b3e13c0",
+      "id": 21
+    },
+    "002kIl7mBtLOFufQUM4N": {
+      "timestamp": "2025-03-27T14:11:25.529Z",
+      "country": "Antigua and Barb.",
+      "msFromExerciseToFirstClick": 8883,
+      "msFromExerciseToFinishClick": 8883,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 92.26025851944763,
+      "deviceId": "994e79b9-ab2d-46dd-b380-a7406cfe504b",
+      "id": 578
+    },
+    "003Yqovpw8IFVSGTU1oU": {
+      "timestamp": "2025-03-19T23:50:17.254Z",
+      "country": "Republic of Serbia",
+      "msFromExerciseToFirstClick": 2993,
+      "msFromExerciseToFinishClick": 2993,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 137.14406923925188,
+      "deviceId": "6934d4f7-ee2f-482b-8dec-3a7a4dbcb4c6",
+      "id": 142
+    },
+    "005iVX9K7kaxksPaO3zH": {
+      "timestamp": "2025-03-25T17:28:25.966Z",
+      "country": "Madagascar",
+      "msFromExerciseToFirstClick": 2603,
+      "msFromExerciseToFinishClick": 2603,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 89.75556649554807,
+      "deviceId": "c5a9c6c9-8470-47c5-81ff-d7a1bbad4d2a",
+      "id": 22
+    },
+    "008dBFv7DUTxiVkbmcCH": {
+      "timestamp": "2025-03-27T15:46:14.160Z",
+      "country": "Australia",
+      "msFromExerciseToFirstClick": 1377,
+      "msFromExerciseToFinishClick": 1377,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 1581.2390605201817,
+      "deviceId": "93b1e78c-6a25-4e96-99e0-b843c0b507f3",
+      "id": 787
+    },
+    "00AUWuMcyG0iQMUonulX": {
+      "timestamp": "2025-03-19T18:40:40.663Z",
+      "country": "Ukraine",
+      "msFromExerciseToFirstClick": 2833,
+      "msFromExerciseToFinishClick": 2833,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 149.47365948023577,
+      "deviceId": "2e32bfb1-734d-4130-b4ce-58517c828ee5",
+      "id": 637
+    },
+    "00CTkQ28Icb97DWIAOqB": {
+      "timestamp": "2025-03-19T17:00:44.674Z",
+      "country": "Germany",
+      "msFromExerciseToFirstClick": 2817,
+      "msFromExerciseToFinishClick": 2817,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 59.06023882062812,
+      "deviceId": "dcfca636-a7d8-4894-932f-4c735133df12",
+      "id": 259
+    },
+    "00CbVsqdfB4eLWXTdx24": {
+      "timestamp": "2025-03-20T07:10:38.903Z",
+      "country": "Turkmenistan",
+      "msFromExerciseToFirstClick": 2813,
+      "msFromExerciseToFinishClick": 2813,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 877.4113242452567,
+      "deviceId": "f59428b7-0d86-4868-aea2-2fe3052fa52f",
+      "id": 114
+    },
+    "00DSdfEpVJXmalhlOZk1": {
+      "timestamp": "2025-03-31T17:45:28.167Z",
+      "country": "Cabo Verde",
+      "msFromExerciseToFirstClick": 2905,
+      "msFromExerciseToFinishClick": 2905,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 91.27281963999863,
+      "deviceId": "22b0955a-8451-45b6-9dd7-591a08e0c453",
+      "id": 1157
+    },
+    "00ECbT33A72KETgntqLC": {
+      "timestamp": "2025-04-01T11:17:23.806Z",
+      "country": "Vatican",
+      "msFromExerciseToFirstClick": 1644,
+      "msFromExerciseToFinishClick": 1644,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 0.19011529657149193,
+      "deviceId": "7c01f9f2-d28b-4ee3-bd74-ed78e83be6a3",
+      "id": 78
+    },
+    "00EI7wl5IHrOCkJOQHDc": {
+      "timestamp": "2025-03-19T17:02:32.867Z",
+      "country": "Dominican Republic",
+      "msFromExerciseToFirstClick": 1788,
+      "msFromExerciseToFinishClick": 2962,
+      "numberOfClicksNeeded": 2,
+      "distanceOfFirstClickToCenterOfCountry": 2478.0198734825144,
+      "deviceId": "958acbf9-dc27-406b-b3e4-2f17a40ab894",
+      "id": 20
+    },
+    "00HO0QLCm96NBtVbM9qz": {
+      "timestamp": "2025-03-19T16:52:08.290Z",
+      "country": "Mexico",
+      "msFromExerciseToFirstClick": 2416,
+      "msFromExerciseToFinishClick": 2416,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 978.073095293942,
+      "deviceId": "700814ae-f8a8-4186-b2ca-f027f5e626cd",
+      "id": 14
+    },
+    "00J9PxVuqYVF92BpTns5": {
+      "timestamp": "2025-04-13T16:04:38.542Z",
+      "country": "Samoa",
+      "msFromExerciseToFirstClick": 5010,
+      "msFromExerciseToFinishClick": 6794,
+      "numberOfClicksNeeded": 2,
+      "distanceOfFirstClickToCenterOfCountry": 3661.7632291993013,
+      "deviceId": "8345e4c3-ccc2-4cad-9e5d-9d177812c895",
+      "id": 552
+    },
+    "00KEcaxHEdGWxeTNyHu1": {
+      "timestamp": "2025-03-17T20:25:07.769Z",
+      "country": "Guinea",
+      "msFromExerciseToFirstClick": 1094,
+      "msFromExerciseToFinishClick": 1622,
+      "numberOfClicksNeeded": 2,
+      "distanceOfFirstClickToCenterOfCountry": 3760.9987938701206,
+      "deviceId": "b7401b2e-1880-4b3c-b066-e4a0574b24df",
+      "id": 3
+    },
+    "00KEhQcCy24947nSyttL": {
+      "timestamp": "2025-03-19T16:49:40.904Z",
+      "country": "The Bahamas",
+      "msFromExerciseToFirstClick": 2121,
+      "msFromExerciseToFinishClick": 2121,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 15.218607122595706,
+      "deviceId": "dcfca636-a7d8-4894-932f-4c735133df12",
+      "id": 201
+    },
+    "00MEcc8NP5oBkfEJcbTS": {
+      "timestamp": "2025-03-24T11:06:44.971Z",
+      "country": "Poland",
+      "msFromExerciseToFirstClick": 6688,
+      "msFromExerciseToFinishClick": 6688,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 79.56809602996469,
+      "deviceId": "e1092dd9-6447-4547-a5dc-fb15afef2d97",
+      "id": 297
+    },
+    "00MnZjl425qWYVKeMyvc": {
+      "timestamp": "2025-03-23T22:55:07.463Z",
+      "country": "Slovenia",
+      "msFromExerciseToFirstClick": 2437,
+      "msFromExerciseToFinishClick": 2437,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 14.207500403967279,
+      "deviceId": "96763484-7fce-42ac-a2d5-3a8ed66610b3",
+      "id": 618
+    },
+    "00NYCIFrppG6ixOEauOc": {
+      "timestamp": "2025-03-21T22:55:02.233Z",
+      "country": "Chile",
+      "msFromExerciseToFirstClick": 1719,
+      "msFromExerciseToFinishClick": 1719,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 207.43834567183225,
+      "deviceId": "45f124b1-6073-4b66-9ddb-c2f57c35e88a",
+      "id": 705
+    },
+    "00NepuCXnmeEtm5QXmyc": {
+      "timestamp": "2025-03-24T22:29:31.320Z",
+      "country": "Togo",
+      "msFromExerciseToFirstClick": 2878,
+      "msFromExerciseToFinishClick": 2878,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 240.66135291175107,
+      "deviceId": "cbc5f438-e7fa-4649-b216-f491480229e6",
+      "id": 61
+    },
+    "00NkToDo64NZnuhRzfM1": {
+      "timestamp": "2025-04-01T04:19:48.459Z",
+      "country": "Guyana",
+      "msFromExerciseToFirstClick": 3607,
+      "msFromExerciseToFinishClick": 3607,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 72.07651272063482,
+      "deviceId": "b40dcdb3-77fb-4179-afe2-f7cea670e161",
+      "id": 11
+    },
+    "00NqGc4mHEgRTUPvs8La": {
+      "timestamp": "2025-03-20T23:18:21.574Z",
+      "country": "Switzerland",
+      "msFromExerciseToFirstClick": 2517,
+      "msFromExerciseToFinishClick": 2517,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 15.800648503921915,
+      "deviceId": "2b1c7932-d2a3-4a9a-9247-d9e097368464",
+      "id": 465
+    },
+    "00PSdXQxIj3mrycirw9U": {
+      "timestamp": "2025-04-04T12:00:42.881Z",
+      "country": "New Caledonia",
+      "msFromExerciseToFirstClick": 5488,
+      "msFromExerciseToFinishClick": 5488,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 504.4803455387835,
+      "deviceId": "d379d7d4-5159-4867-b3aa-5278d9a4ed84",
+      "id": 107
+    },
+    "00RlY7u8KkYxiqQT3lx8": {
+      "timestamp": "2025-03-30T06:20:20.237Z",
+      "country": "Mauritania",
+      "msFromExerciseToFirstClick": 8447,
+      "msFromExerciseToFinishClick": 8447,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 612.4102150703735,
+      "deviceId": "21ee809f-7480-4278-b371-eec4a126429b",
+      "id": 85
+    },
+    "00S8XXcBVn0W8vpLK0Lt": {
+      "timestamp": "2025-03-23T14:01:05.084Z",
+      "country": "Zambia",
+      "msFromExerciseToFirstClick": 182580,
+      "msFromExerciseToFinishClick": 182580,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 39.27778619676467,
+      "deviceId": "c9414f51-6dff-44ce-abbd-522faa2377cc",
+      "id": 1828
+    },
+    "00Sk4XQFb8SESDoRt2oR": {
+      "timestamp": "2025-03-27T15:51:01.820Z",
+      "country": "Netherlands",
+      "msFromExerciseToFirstClick": 3187,
+      "msFromExerciseToFinishClick": 3187,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 109.17559226014734,
+      "deviceId": "df5a203b-ca44-4e14-a947-abd54f0ab660",
+      "id": 1275
+    },
+    "00Ti4rFLyJyrLHUP3vdO": {
+      "timestamp": "2025-03-29T21:29:39.816Z",
+      "country": "Palestine",
+      "msFromExerciseToFirstClick": 4821,
+      "msFromExerciseToFinishClick": 4821,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 246.21536964490252,
+      "deviceId": "235c6ab9-c97a-4dd0-be0a-e350f28b0a46",
+      "id": 7
+    },
+    "00TjevFqLU5ZPCW8SIFG": {
+      "timestamp": "2025-03-30T07:31:54.813Z",
+      "country": "Norway",
+      "msFromExerciseToFirstClick": 3109,
+      "msFromExerciseToFinishClick": 3109,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 438.26100793756063,
+      "deviceId": "5b1aefe7-bb98-4af3-8c40-8a7119b04e89",
+      "id": 7
+    },
+    "00UFdeZAhI9wnQnTRM5Z": {
+      "timestamp": "2025-03-29T06:49:10.010Z",
+      "country": "Guatemala",
+      "msFromExerciseToFirstClick": 3963,
+      "msFromExerciseToFinishClick": 3963,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 293.69741352560027,
+      "deviceId": "7fb54fba-8cba-432f-96c2-3d87cda71822",
+      "id": 248
+    },
+    "00UNbTTlL4cURzG6dsWK": {
+      "timestamp": "2025-03-28T13:46:40.449Z",
+      "country": "Republic of the Congo",
+      "msFromExerciseToFirstClick": 5378,
+      "msFromExerciseToFinishClick": 5379,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 230.36390028471092,
+      "deviceId": "75d0f1d4-c1f8-402f-ac28-c8e5cce9aaf2",
+      "id": 1028
+    },
+    "00USWhZSSyUSkeRGqvnE": {
+      "timestamp": "2025-04-01T17:48:21.315Z",
+      "country": "Vietnam",
+      "msFromExerciseToFirstClick": 2368,
+      "msFromExerciseToFinishClick": 2368,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 414.0454788735762,
+      "deviceId": "bf74456e-6462-4f58-9636-8c3182d566dc",
+      "id": 130
+    },
+    "00UlkDoUWpzuHVCscPIB": {
+      "timestamp": "2025-03-25T14:18:21.609Z",
+      "country": "Ecuador",
+      "msFromExerciseToFirstClick": 3838,
+      "msFromExerciseToFinishClick": 3838,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 129.75906062820653,
+      "deviceId": "ccb53369-5a0c-44ae-b6c7-6d05ec22aa14",
+      "id": 26
+    },
+    "00Vfl4HdfUOeEJHoWFKY": {
+      "timestamp": "2025-03-30T18:20:39.686Z",
+      "country": "Venezuela",
+      "msFromExerciseToFirstClick": 2216,
+      "msFromExerciseToFinishClick": 2216,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 356.53294234965267,
+      "deviceId": "697d7e0a-e5a9-4a31-93e1-e8fdcb3ad3d0",
+      "id": 10
+    },
+    "00WF3k8r3Rp5ujau0Lrj": {
+      "timestamp": "2025-03-24T11:23:18.536Z",
+      "country": "Bangladesh",
+      "msFromExerciseToFirstClick": 2896,
+      "msFromExerciseToFinishClick": 2896,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 148.02415053598952,
+      "deviceId": "ffd90f1a-09c1-4a2b-9665-ef799ca9b661",
+      "id": 101
+    },
+    "00WqRKVrG74QxeJE9eQU": {
+      "timestamp": "2025-04-19T17:48:08.159Z",
+      "country": "W. Sahara",
+      "msFromExerciseToFirstClick": 4298,
+      "msFromExerciseToFinishClick": 4298,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 107.63537920287143,
+      "deviceId": "34edcf10-289a-4907-b992-d99fc5b9afe9",
+      "id": 2060
+    },
+    "00XI6GZ5eYVcGnI62fA4": {
+      "timestamp": "2025-03-19T16:42:01.906Z",
+      "country": "USA",
+      "msFromExerciseToFirstClick": 2744,
+      "msFromExerciseToFinishClick": 2744,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 852.8551056610561,
+      "deviceId": "3bb3c832-be41-47c9-9c31-ae3a6785b20e",
+      "id": 53
+    },
+    "00XM4xNaUCfZAYKFzh1f": {
+      "timestamp": "2025-04-03T06:47:50.738Z",
+      "country": "Ecuador",
+      "msFromExerciseToFirstClick": 3032,
+      "msFromExerciseToFinishClick": 4005,
+      "numberOfClicksNeeded": 3,
+      "distanceOfFirstClickToCenterOfCountry": 1767.1001110623256,
+      "deviceId": "93b1e78c-6a25-4e96-99e0-b843c0b507f3",
+      "id": 1227
+    },
+    "00Z0X0yNGo83iGmZaIbT": {
+      "timestamp": "2025-03-25T15:43:46.127Z",
+      "country": "Nigeria",
+      "msFromExerciseToFirstClick": 4172,
+      "msFromExerciseToFinishClick": 4173,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 86.5869366477713,
+      "deviceId": "21dc13a6-bfeb-4144-ba35-528225eda2b7",
+      "id": 27
+    },
+    "00ZDS9b8ZVdaUCYyFrZH": {
+      "timestamp": "2025-03-28T22:45:32.129Z",
+      "country": "Vietnam",
+      "msFromExerciseToFirstClick": 2560,
+      "msFromExerciseToFinishClick": 2560,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 568.3944942560215,
+      "deviceId": "a925e77b-5bba-43f2-bc19-535bee957fb3",
+      "id": 12
+    },
+    "00a97hin0esQ05yWIIPn": {
+      "timestamp": "2025-04-18T12:58:41.442Z",
+      "country": "Gambia",
+      "msFromExerciseToFirstClick": 3712,
+      "msFromExerciseToFinishClick": 3712,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 1290.3424313372436,
+      "deviceId": "0576579f-25ab-46ac-bf8b-d5d2145f1fb3",
+      "id": 293
+    },
+    "00blniiB4opFgBO1UB0g": {
+      "timestamp": "2025-04-05T11:59:06.372Z",
+      "country": "U.S. Virgin Is.",
+      "msFromExerciseToFirstClick": 5330,
+      "msFromExerciseToFinishClick": 5330,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 42.04739412668681,
+      "deviceId": "7a4b239c-c673-4ef7-81c5-600c1eeb4477",
+      "id": 3284
+    },
+    "00csNhSqfL1e3Y9LGkMz": {
+      "timestamp": "2025-04-08T18:24:13.375Z",
+      "country": "Poland",
+      "msFromExerciseToFirstClick": 4334,
+      "msFromExerciseToFinishClick": 4334,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 81.60598470104074,
+      "deviceId": "be602123-db3f-46ae-982d-50976e1cff6f",
+      "id": 59
+    },
+    "00dt1sWEvJhdZCaRcRI1": {
+      "timestamp": "2025-04-01T06:58:44.316Z",
+      "country": "France",
+      "msFromExerciseToFirstClick": 2806,
+      "msFromExerciseToFinishClick": 2806,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 840.5353400416365,
+      "deviceId": "72d036b4-1bcd-40e3-8b9c-a4c3871a768c",
+      "id": 316
+    },
+    "00eteLRHPz6gWzTKwuX8": {
+      "timestamp": "2025-04-02T16:36:06.268Z",
+      "country": "Peru",
+      "msFromExerciseToFirstClick": 2383,
+      "msFromExerciseToFinishClick": 2383,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 282.3429909207365,
+      "deviceId": "3a64fd33-0885-4842-9cdf-2373326ffe35",
+      "id": 36
+    },
+    "00gqBXIqm3NdUufKqGik": {
+      "timestamp": "2025-03-24T06:56:30.743Z",
+      "country": "India",
+      "msFromExerciseToFirstClick": 3223,
+      "msFromExerciseToFinishClick": 3223,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 492.88690771486813,
+      "deviceId": "fad417d1-b0b4-4db9-90ed-55ab2569f244",
+      "id": 222
+    },
+    "00grTdkBctvfQBWWvbm3": {
+      "timestamp": "2025-03-20T04:02:28.557Z",
+      "country": "Oman",
+      "msFromExerciseToFirstClick": 3270,
+      "msFromExerciseToFinishClick": 5840,
+      "numberOfClicksNeeded": 2,
+      "distanceOfFirstClickToCenterOfCountry": 4599.677998289111,
+      "deviceId": "aa940348-5910-4a07-b273-39954f64228f",
+      "id": 48
+    },
+    "00kNyG6snxaDx4wLyBau": {
+      "timestamp": "2025-03-23T09:58:36.466Z",
+      "country": "East Timor",
+      "msFromExerciseToFirstClick": 76,
+      "msFromExerciseToFinishClick": 1269,
+      "numberOfClicksNeeded": 2,
+      "distanceOfFirstClickToCenterOfCountry": 6129.91689279339,
+      "deviceId": "7b8ab774-39df-4c46-81ee-d980c2b03ce6",
+      "id": 8
+    },
+    "00kiaWYErsVrsZvdlzFY": {
+      "timestamp": "2025-03-26T17:38:52.099Z",
+      "country": "Cambodia",
+      "msFromExerciseToFirstClick": 5579,
+      "msFromExerciseToFinishClick": 5579,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 23.698940736483742,
+      "deviceId": "93af03d2-20b0-422f-9ab4-06bf2c5a9049",
+      "id": 8
+    },
+    "00mA8XbHGWBduprwR7gP": {
+      "timestamp": "2025-03-31T20:31:04.073Z",
+      "country": "São Tomé and Principe",
+      "msFromExerciseToFirstClick": 1406,
+      "msFromExerciseToFinishClick": 1406,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 95.60876709696474,
+      "deviceId": "1d9c2c67-9197-4dd1-b383-86b1956bfba7",
+      "id": 630
+    },
+    "00naczTUNp39psjRfTlB": {
+      "timestamp": "2025-03-25T11:29:39.466Z",
+      "country": "South Africa",
+      "msFromExerciseToFirstClick": 2968,
+      "msFromExerciseToFinishClick": 2968,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 190.70345925681494,
+      "deviceId": "50733a17-0b26-4c5e-87a1-d4b0b8d784a1",
+      "id": 72
+    },
+    "00oRfthUfOI0RpPWdsl7": {
+      "timestamp": "2025-03-20T21:06:46.406Z",
+      "country": "Vietnam",
+      "msFromExerciseToFirstClick": 1828,
+      "msFromExerciseToFinishClick": 1828,
+      "numberOfClicksNeeded": 1,
+      "distanceOfFirstClickToCenterOfCountry": 1423.510758021175,
+      "deviceId": "55fde0ae-344a-4980-aeb7-53b6d5d81aba",
+      "id": 529
+    }
+}

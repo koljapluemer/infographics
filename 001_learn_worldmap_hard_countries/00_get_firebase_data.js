@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 // Load environment variables
 dotenv.config();
 
-// Get current directory
+// Get current directory, and then put in data/full
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Your web app's Firebase configuration
@@ -41,7 +41,7 @@ async function downloadCollection() {
     });
     
     // Write the data to a JSON file in the current directory
-    const outputPath = join(__dirname, 'learning_data.json');
+    const outputPath = join(__dirname, 'data/full/learning_data.json');
     await fs.writeFile(outputPath, JSON.stringify(data, null, 2));
     console.log(`Data successfully downloaded and saved to ${outputPath}`);
   } catch (error) {
