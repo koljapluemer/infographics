@@ -2,15 +2,17 @@ import json
 from datetime import datetime
 from typing import Dict, List, Tuple
 import pandas as pd
-from collections import defaultdict
 import numpy as np
 from sklearn.model_selection import train_test_split
 from tqdm import tqdm
 
 def load_data(filepath: str) -> Dict:
     """Load JSON data from file."""
+    print("Loading JSON data...")
     with open(filepath, 'r') as f:
-        return json.load(f)
+        data = json.load(f)
+    print(f"Loaded {len(data)} entries")
+    return data
 
 def convert_timestamp_to_unix(timestamp: str) -> int:
     """Convert ISO timestamp to UNIX timestamp."""
@@ -25,148 +27,174 @@ def is_same_day(timestamp1: int, timestamp2: int) -> bool:
 
 def process_data(data: Dict) -> pd.DataFrame:
     """Process the data and create a DataFrame with required columns."""
-    # First, convert all entries to a list of dictionaries and sort by timestamp
-    entries = []
-    for entry_id, entry in tqdm(data.items(), desc="Converting entries"):
-        entries.append({
+    print("Converting data to DataFrame...")
+    # Convert to DataFrame for vectorized operations
+    entries_df = pd.DataFrame([
+        {
             'deviceId': entry['deviceId'],
             'country': entry['country'],
             'timestamp': convert_timestamp_to_unix(entry['timestamp']),
             'is_correct': entry['numberOfClicksNeeded'] == 1
-        })
-    
-    # Sort entries by timestamp
-    entries.sort(key=lambda x: x['timestamp'])
-    
-    # Calculate global success rates for each country
-    country_stats = defaultdict(lambda: {'first': [], 'third': [], 'fifth': []})
-    for entry in tqdm(entries, desc="Calculating global stats"):
-        country = entry['country']
-        device_id = entry['deviceId']
-        is_correct = entry['is_correct']
-        
-        # Get the attempt number for this user-country combination
-        attempt_num = len([e for e in entries if e['deviceId'] == device_id and e['country'] == country and e['timestamp'] <= entry['timestamp']])
-        
-        # Store in appropriate list
-        if attempt_num == 1:
-            country_stats[country]['first'].append(is_correct)
-        elif attempt_num == 3:
-            country_stats[country]['third'].append(is_correct)
-        elif attempt_num == 5:
-            country_stats[country]['fifth'].append(is_correct)
-    
-    # Calculate success rates
-    global_stats = {}
-    for country, stats in tqdm(country_stats.items(), desc="Computing success rates"):
-        global_stats[country] = {
-            'first_guess_success_rate': sum(stats['first']) / len(stats['first']) if stats['first'] else 0,
-            'first_guess_sample_size': len(stats['first']),
-            'third_guess_success_rate': sum(stats['third']) / len(stats['third']) if stats['third'] else 0,
-            'third_guess_sample_size': len(stats['third']),
-            'fifth_guess_success_rate': sum(stats['fifth']) / len(stats['fifth']) if stats['fifth'] else 0,
-            'fifth_guess_sample_size': len(stats['fifth'])
         }
+        for entry in tqdm(data.values(), desc="Converting entries")
+    ])
     
-    # Process each entry to create rows
-    rows = []
-    user_country_history = defaultdict(list)  # (deviceId, country) -> list of (timestamp, is_correct)
-    user_last_guess = {}  # deviceId -> timestamp
-    user_country_last_guess = {}  # (deviceId, country) -> timestamp
+    print("Sorting and calculating attempt numbers...")
+    # Sort by timestamp
+    entries_df = entries_df.sort_values('timestamp')
     
-    for entry in tqdm(entries, desc="Creating rows"):
-        device_id = entry['deviceId']
-        country = entry['country']
-        timestamp = entry['timestamp']
-        is_correct = entry['is_correct']
-        
-        # Get historical data
-        history = user_country_history[(device_id, country)]
-        total_guesses = len(history)
-        
-        # Calculate user's total guesses
-        user_total_guesses = sum(len(h) for h in user_country_history.values() if h[0][0] == device_id)
-        
-        # Calculate streak
-        current_streak = 0
-        for prev_guess in reversed(history):
-            if prev_guess[1]:  # if correct
-                current_streak += 1
-            else:
-                break
-        
-        # Calculate correct guess percentage
-        correct_guesses = sum(1 for g in history if g[1])
-        correct_guess_percentage = correct_guesses / total_guesses if total_guesses > 0 else -1
-        
-        # Calculate time-based features
-        time_since_last_country = timestamp - user_country_last_guess.get((device_id, country), timestamp)
-        time_since_last_user = timestamp - user_last_guess.get(device_id, timestamp)
-        
-        # Calculate countries attempted since last
-        countries_since_last = set()
-        if device_id in user_last_guess:
-            last_timestamp = user_last_guess[device_id]
-            for e in entries:
-                if e['deviceId'] == device_id and last_timestamp < e['timestamp'] < timestamp:
-                    countries_since_last.add(e['country'])
-        
-        # Check if first guess of day
-        is_first_guess_of_day = True
-        if device_id in user_last_guess:
-            is_first_guess_of_day = not is_same_day(user_last_guess[device_id], timestamp)
-        
-        # Create row
-        row = {
-            'deviceId_country_timestamp': f"{device_id}_{country}_{timestamp}",
-            'deviceId': device_id,
-            'country': country,
-            'timestamp': timestamp,
-            'total_guesses': total_guesses,
-            'user_total_guesses': user_total_guesses,
-            'previous_guess_timestamp': user_country_last_guess.get((device_id, country), timestamp),
-            'current_guess_timestamp': timestamp,
-            'current_streak': current_streak,
-            'correct_guess_percentage': correct_guess_percentage,
-            'time_since_last_country_guess': time_since_last_country,
-            'time_since_last_user_guess': time_since_last_user,
-            'countries_attempted_since_last': len(countries_since_last),
-            'is_first_guess_of_day': is_first_guess_of_day,
-            'is_correct': int(is_correct)
-        }
-        
-        # Add global statistics
-        row.update(global_stats[country])
-        
-        rows.append(row)
-        
-        # Update history
-        history.append((timestamp, is_correct))
-        user_last_guess[device_id] = timestamp
-        user_country_last_guess[(device_id, country)] = timestamp
+    # Calculate attempt numbers using cumcount
+    tqdm.pandas(desc="Calculating attempt numbers")
+    entries_df['attempt_num'] = entries_df.groupby(['deviceId', 'country']).cumcount() + 1
     
-    # Create DataFrame and sort by compound key
-    df = pd.DataFrame(rows)
-    df = df.sort_values('deviceId_country_timestamp')
+    print("Calculating global statistics...")
+    # Calculate global stats using vectorized operations
+    tqdm.pandas(desc="Processing first attempts")
+    first_attempts = entries_df[entries_df['attempt_num'] == 1].groupby('country')['is_correct'].progress_apply(list)
     
-    return df
+    tqdm.pandas(desc="Processing third attempts")
+    third_attempts = entries_df[entries_df['attempt_num'] == 3].groupby('country')['is_correct'].progress_apply(list)
+    
+    tqdm.pandas(desc="Processing fifth attempts")
+    fifth_attempts = entries_df[entries_df['attempt_num'] == 5].groupby('country')['is_correct'].progress_apply(list)
+    
+    print("Computing success rates...")
+    global_stats = pd.DataFrame({
+        'first_guess_success_rate': first_attempts.apply(lambda x: sum(x) / len(x) if x else 0),
+        'first_guess_sample_size': first_attempts.apply(len),
+        'third_guess_success_rate': third_attempts.apply(lambda x: sum(x) / len(x) if x else 0),
+        'third_guess_sample_size': third_attempts.apply(len),
+        'fifth_guess_success_rate': fifth_attempts.apply(lambda x: sum(x) / len(x) if x else 0),
+        'fifth_guess_sample_size': fifth_attempts.apply(len)
+    }).fillna(0)
+    
+    print("Calculating user statistics...")
+    # Calculate user-country histories
+    tqdm.pandas(desc="Building user-country histories")
+    user_country_history = entries_df.groupby(['deviceId', 'country']).progress_apply(
+        lambda x: list(zip(x['timestamp'], x['is_correct']))
+    ).to_dict()
+    
+    # Calculate user total guesses up to each timestamp
+    tqdm.pandas(desc="Calculating user total guesses")
+    entries_df['user_total_guesses'] = entries_df.groupby('deviceId').cumcount() + 1
+    
+    print("Calculating streaks and time-based features...")
+    # Calculate streaks using vectorized operations
+    tqdm.pandas(desc="Calculating streaks")
+    entries_df['streak'] = entries_df.groupby(['deviceId', 'country'])['is_correct'].transform(
+        lambda x: x[::-1].cumsum()[::-1] * x[::-1].cumprod()[::-1]
+    )
+    
+    # Calculate time-based features
+    tqdm.pandas(desc="Calculating country time differences")
+    entries_df['prev_timestamp'] = entries_df.groupby(['deviceId', 'country'])['timestamp'].transform('shift')
+    entries_df['time_since_last_country'] = entries_df['timestamp'] - entries_df['prev_timestamp'].fillna(entries_df['timestamp'])
+    
+    tqdm.pandas(desc="Calculating user time differences")
+    entries_df['prev_user_timestamp'] = entries_df.groupby('deviceId')['timestamp'].transform('shift')
+    entries_df['time_since_last_user'] = entries_df['timestamp'] - entries_df['prev_user_timestamp'].fillna(entries_df['timestamp'])
+    
+    print("Calculating countries attempted since last...")
+    # Calculate countries attempted since last
+    def get_countries_since_last(group):
+        timestamps = group['timestamp'].values
+        countries = group['country'].values
+        result = np.zeros(len(group))
+        
+        for i in tqdm(range(1, len(group)), desc="Processing user entries", leave=False):
+            mask = (timestamps[:i] > timestamps[i-1]) & (timestamps[:i] < timestamps[i])
+            result[i] = len(np.unique(countries[:i][mask]))
+        
+        return pd.Series(result, index=group.index)
+    
+    tqdm.pandas(desc="Calculating countries attempted")
+    entries_df['countries_attempted_since_last'] = entries_df.groupby('deviceId').progress_apply(
+        get_countries_since_last
+    ).reset_index(level=0, drop=True)
+    
+    print("Calculating day-based features...")
+    # Calculate if first guess of day
+    tqdm.pandas(desc="Calculating day-based features")
+    entries_df['prev_day'] = entries_df.groupby('deviceId')['timestamp'].transform(
+        lambda x: pd.Series(x).apply(lambda t: datetime.fromtimestamp(t).date())
+    ).shift(1)
+    entries_df['current_day'] = entries_df['timestamp'].apply(lambda t: datetime.fromtimestamp(t).date())
+    entries_df['is_first_guess_of_day'] = entries_df['prev_day'] != entries_df['current_day']
+    
+    print("Calculating correct guess percentages...")
+    # Calculate correct guess percentage
+    tqdm.pandas(desc="Calculating correct guesses")
+    entries_df['correct_guesses'] = entries_df.groupby(['deviceId', 'country'])['is_correct'].transform('cumsum')
+    entries_df['correct_guess_percentage'] = entries_df['correct_guesses'] / (entries_df['attempt_num'] - 1)
+    entries_df['correct_guess_percentage'] = entries_df['correct_guess_percentage'].fillna(-1)
+    
+    print("Creating final DataFrame...")
+    # Create final DataFrame
+    tqdm.pandas(desc="Merging with global stats")
+    result_df = entries_df.merge(
+        global_stats,
+        on='country',
+        how='left'
+    )
+    
+    # Create compound key before renaming columns
+    result_df['deviceId_country_timestamp'] = result_df['deviceId'] + '_' + result_df['country'] + '_' + result_df['timestamp'].astype(str)
+    
+    # Select and rename columns
+    final_columns = {
+        'deviceId': 'deviceId',
+        'country': 'country',
+        'timestamp': 'current_guess_timestamp',
+        'attempt_num': 'total_guesses',
+        'user_total_guesses': 'user_total_guesses',
+        'prev_timestamp': 'previous_guess_timestamp',
+        'streak': 'current_streak',
+        'correct_guess_percentage': 'correct_guess_percentage',
+        'time_since_last_country': 'time_since_last_country_guess',
+        'time_since_last_user': 'time_since_last_user_guess',
+        'countries_attempted_since_last': 'countries_attempted_since_last',
+        'is_first_guess_of_day': 'is_first_guess_of_day',
+        'is_correct': 'is_correct',
+        'deviceId_country_timestamp': 'deviceId_country_timestamp'
+    }
+    
+    # Add global stats columns
+    for col in global_stats.columns:
+        final_columns[col] = col
+    
+    result_df = result_df[list(final_columns.keys())].rename(columns=final_columns)
+    
+    # Sort by compound key
+    print("Sorting final DataFrame...")
+    result_df = result_df.sort_values('deviceId_country_timestamp')
+    
+    return result_df
 
 def main():
+    print("Loading data...")
     # Process full dataset
     data = load_data('data/full/learning_data_after_cutoff.json')
     df_full = process_data(data)
     
+    print("Splitting data...")
     # Split into train/val sets
     df_train, df_val = train_test_split(df_full, test_size=0.5, random_state=42)
     
     # Create demo version (first 200 rows)
     df_demo = df_full.head(200)
     
-    # Save all versions
-    df_full.to_csv('data/csv/predictor_data_alt_full.csv', index=False)
-    df_train.to_csv('data/csv/predictor_data_alt_train.csv', index=False)
-    df_val.to_csv('data/csv/predictor_data_alt_val.csv', index=False)
-    df_demo.to_csv('data/csv/predictor_data_alt_demo.csv', index=False)
+    print("Saving files...")
+    # Save all versions with progress bars
+    for name, df in tqdm([
+        ('predictor_data_alt_full.csv', df_full),
+        ('predictor_data_alt_train.csv', df_train),
+        ('predictor_data_alt_val.csv', df_val),
+        ('predictor_data_alt_demo.csv', df_demo)
+    ], desc="Saving files"):
+        df.to_csv(f'data/csv/{name}', index=False)
+    
+    print("Done!")
 
 if __name__ == "__main__":
     main()
