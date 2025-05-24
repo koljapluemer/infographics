@@ -6,7 +6,7 @@ import numpy as np
 import os
 
 # Configuration
-TARGET_COUNTRY = "El Salvador"  # Change this to analyze different countries
+TARGET_COUNTRY = "Dominica"  # Change this to analyze different countries
 MAX_ATTEMPTS = 10  # Maximum number of attempts to analyze
 
 # Load the learning data
