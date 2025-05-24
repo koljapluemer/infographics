@@ -90,8 +90,11 @@ def process_data(data: Dict) -> pd.DataFrame:
             'current_streak': current_streak,
             'correct_guess_percentage': correct_guess_percentage,
             'first_guess_success_rate': first_guess_success_rate,
+            'first_guess_sample_size': len(first_attempts),
             'third_guess_success_rate': third_guess_success_rate,
-            'fifth_guess_success_rate': fifth_guess_success_rate
+            'third_guess_sample_size': len(third_attempts),
+            'fifth_guess_success_rate': fifth_guess_success_rate,
+            'fifth_guess_sample_size': len(fifth_attempts)
         }
         rows.append(row)
     
