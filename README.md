@@ -1,5 +1,9 @@
 # Infographics & Posters
 
+> [!NOTE]  
+> *Archived Prototype. Infrographics should be created in `scripts/`, in the relevant project folder, or in Obsidian.*
+
+
 I occasionally build infographics, posters and maps.
 Often, they are quickly made with Obsidian Canvas or Photopea, but sometimes they are complex or require auxiliary code. If that's the case, they live here.
 
